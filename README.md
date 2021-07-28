@@ -1,6 +1,6 @@
 # Navigation Pattern
 
-The Navigation Object contains the main link and button elements for navigating different views and features of an application. It uses responsive styling to appear as a three button menu for small view ports. Possible button options may include a homepage link (as an SVG logo), translation button, or mobile menu toggle. The menu is fixed to the bottom of the screen by default to assist with thumb reach.
+The Navigation Pattern is a responsive nav that contains the main links for navigating different views and button elements for site features (such as translation). It uses responsive styling to appear as a three button menu for small view ports. Possible button options may include a homepage link (as an SVG logo), translation button, or mobile menu toggle. The menu is fixed to the bottom of the screen by default to assist with thumb reach.
 
 On larger devices (tablets) the menu sticks to the top of the screen with the same three button menu set displayed as inline links.
 
@@ -9,6 +9,12 @@ On extra large devices (desktop) the menu is statically positioned at the top of
 It is recommended to use a maximum three items such as the logo, translate button, and menu button. Additional navigation items should be displayed in a different pattern, such as the [Menu Pattern](https://github.com/NYCOpportunity/pattern-menu).
 
 ## Usage
+
+### Installation
+
+```shell
+$ npm install @nycopportunity/pattern-navigation
+```
 
 ### Styles
 
