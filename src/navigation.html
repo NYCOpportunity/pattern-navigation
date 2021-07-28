@@ -1,0 +1,46 @@
+<nav aria-label="Primary Navigation" class="o-navigation o-navigation-fixed" role="navigation">
+  <a class="o-navigation__logo o-navigation__menu-item" href="/">
+    <svg aria-hidden="true" fill="none" height="60" viewBox="0 0 60 128" width="128" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Website Title</title>
+
+      <!-- SVG Content -->
+    </svg>
+  </a>
+
+  <!-- Possible Navigation Items. These will be hidden on mobile devices. -->
+  <a class="o-navigation__item" href="/programs">Programs</a>
+
+  <a class="o-navigation__item" href="/about">About</a>
+
+  <!-- Possible Menu Item. A custom language selector. -->
+  <label class="o-navigation__menu-item" for="js-custom-language-selector">
+    <svg class="o-navigation__menu-icon">
+      <use xlink:href="#icon-translate"></use>
+    </svg>
+
+    <div class="o-navigation__menu-label">
+      <select class="underline" name="js-custom-language-selector">
+        <option disabled="true" selected="true" value="restore">Translate</option>
+        <option value="es">Español</option>
+        <option value="ru">Русский</option>
+        <option value="ko">한국어</option>
+        <option value="ar">العربية</option>
+        <option value="ht">Kreyol</option>
+        <option value="zh-CN">繁體中文</option>
+        <option value="fr">Français</option>
+        <option value="pl">polski</option>
+        <option value="ur">اردو</option>
+        <option value="bn">বাংলা</option>
+      </select>
+    </div>
+  </label>
+
+  <!-- Possible Menu Item. A sliding menu toggle. This will only be visible on mobile devices. -->
+  <button class="o-navigation__menu-item o-navigation__menu-toggle">
+    <svg class="o-navigation__menu-icon">
+      <use xlink:href="#feather-menu"></use>
+    </svg>
+
+    <span class="o-navigation__menu-label">Menu</span>
+  </button>
+</nav>
