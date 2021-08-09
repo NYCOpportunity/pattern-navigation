@@ -3,6 +3,7 @@
  */
 
 .o-navigation {
+  font-size: var(--o-navigation-font-size);
   line-height: var(--o-navigation-line-height);
 
   padding-left: calc(var(--o-navigation-grid-base) * 2);

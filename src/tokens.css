@@ -1,5 +1,6 @@
 :root {
   --o-navigation-grid-base: 8px;
+  --o-navigation-font-size: inherit;
   --o-navigation-line-height: 1rem;
   --o-navigation-justification: flex-end;
 
