@@ -20,8 +20,9 @@
   --o-navigation-z-index: 1010;
   --o-navigation-position: fixed;
 
-  --o-navigation-icon-width: 1rem;
-  --o-navigation-icon-height: 1rem;
+  --o-navigation-icon-width: calc(var(--o-navigation-grid-base) * 4);
+  --o-navigation-icon-height: calc(var(--o-navigation-grid-base) * 4);
+
   --o-navigation-icon-margin: calc(1rem / 2);
   --o-navigation-icon-stroke-color: currentColor;
   --o-navigation-icon-stroke-width: 2;
@@ -33,11 +34,11 @@
 /* Tablet */
 @media screen and (min-width: 768px) {
   :root {
-    --o-navigation-icon-width: calc(var(--o-navigation-grid-base) * 4) !important;
-    --o-navigation-icon-height: calc(var(--o-navigation-grid-base) * 4) !important;
-
     --o-navigation-position: sticky;
     --o-navigation-top: 0;
+
+    --o-navigation-icon-width: 1rem;
+    --o-navigation-icon-height: 1rem;
   }
 }
 

@@ -72,6 +72,11 @@
     margin: 0;
   }
 
+  .o-navigation__menu-icon {
+    width: var(--o-navigation-icon-width) !important;
+    height: var(--o-navigation-icon-height) !important;
+  }
+
   .o-navigation__menu-item > .o-navigation__menu-icon:first-child {
     margin: 0;
   }
