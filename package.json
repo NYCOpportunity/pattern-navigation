@@ -1,6 +1,6 @@
 {
   "name": "@nycopportunity/pattern-navigation",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "The Navigation Pattern is a responsive nav that contains the main links for navigating different views and button elements for site features (such as translation).",
   "repository": {
     "type": "git",

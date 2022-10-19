@@ -3,6 +3,7 @@
   --o-navigation-font-size: inherit;
   --o-navigation-line-height: 1rem;
   --o-navigation-justification: flex-end;
+  --o-navigation-height: calc(--o-navigation-grid-base * 10);
 
   --o-navigation-logo-min-width: 128px;
   --o-navigation-item-margin: 1rem;
@@ -15,7 +16,10 @@
 
   --o-navigation-menu-item-font-size: 0.8rem;
 
-  --o-navigation-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.15);
+  --o-navigation-background-color: transparent;
+  --o-navigation-material-border: none;
+  --o-navigation-material-border-radius: 0px;
+  --o-navigation-material-shadow-up: 0 3px 12px 2px rgba(0, 0, 0, 0.15);
 
   --o-navigation-z-index: 1010;
   --o-navigation-position: fixed;

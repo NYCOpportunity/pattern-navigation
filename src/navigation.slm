@@ -2,57 +2,121 @@
 
 / Defaults
 - this.navigation = {}
+- this.navigation.class = 'o-navigation-fixed'
 - this.navigation.id = this.createId()
+- this.navigation.items = [{label: 'Navigation', class: '', url: '#'}]
+- this.navigation.search = true
+- this.navigation.theme = true
+- this.navigation.auth = false
+- this.navigation.login = false
+- this.navigation.profile = true
+- this.navigation.logout = true
+- this.navigation.translate = true
+- this.navigation.menu = {}
+- this.navigation.menu.include = false
 
 / Inherit overrides
 - if (typeof navigation !== 'undefined')
   - this.navigation = Object.assign(this.navigation, navigation);
+  - this.navigation.menu = this.navigation.menu.include ? Object.assign(this.navigation.menu, navigation.menu) : navigation.menu;
 
-/! { @role        Use role='navigation' in production layouts. Identifies the nav as a major landmark }
-/! { @aria-label  Ensures a unique landmark }
-/! { @class       Add "o-navigation-fixed" in production layouts }
-nav role='navigation' aria-label='Primary Navigation' class='o-navigation bg-scale-2 ${this.navigation.class}'
-  a href='${this.baseUrl}/demos/index' class='o-navigation__logo o-navigation__menu-item'
-    span class='sr-only' Working N Y C
+/! { @aria-label  Use "Primary Navigation" to identify the nav as a unique and major landmark }
+/! { @class       Add "o-navigation-fixed" can be added to production layouts to fix the navigation to the bottom of the screen for the mobile viewport }
+/! { @data-js     "navigation" is used as a JavaScript element selector. It is primarily used to set get the client height of the element to add padding to the bottom of the body. This prevents the mobile view of the element from covering the bottom of the page. }
+nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}' data-js='navigation'
+  a class='o-navigation__home o-navigation__menu-item' href='#'
+    svg class='o-navigation__svg' height='26' width='78' viewBox='0 0 456 152' fill='none' xmlns='http://www.w3.org/2000/svg' role='img'
+      title New York City Logo
+      path d='M446.505 66.3803L456 57.0104V28.5052L427.495 0H332.505L304 28.5052V9.51562L294.505 0H256.505L247.01 9.51562V28.5052L228 47.5156L209.01 28.5052V9.51562L199.495 0H161.495L152 9.51562L142.505 0H104.505L95.0104 9.51562V47.5156L47.4948 0H9.49479L0 9.51562V142.505L9.49479 152H47.4948L57.0104 142.505V104.505L104.505 152H142.505L152 142.505V66.5052L199.495 114V142.505L209.01 152H247.01L256.505 142.505V114L304 66.5052V123.516L332.505 152H427.495L456 123.516V95.0104L446.505 85.4948H398.99V95.0104H361.01V57.0104H398.99V66.3803H446.505Z' fill='currentColor'
+      path d='M449.233 6.41315C450.128 6.41315 450.899 6.32986 450.899 5.28876C450.899 4.41424 450.045 4.31013 449.337 4.31013H447.9V6.41315H449.233ZM447.921 10.4942H446.734V3.31068H449.462C451.19 3.31068 452.085 3.91452 452.085 5.37205C452.085 6.68383 451.294 7.20438 450.211 7.32931L452.231 10.4942H450.899L449.045 7.4126H447.942V10.4942H447.921ZM449.191 1.41589C446.38 1.41589 444.194 3.62301 444.194 6.78794C444.194 9.74466 446.11 12.16 449.191 12.16C451.981 12.16 454.168 9.9737 454.168 6.78794C454.168 3.62301 451.981 1.41589 449.191 1.41589ZM449.191 13.2844C445.464 13.2844 442.799 10.4942 442.799 6.78794C442.799 2.87342 445.756 0.291504 449.191 0.291504C452.585 0.291504 455.542 2.87342 455.542 6.78794C455.563 10.6816 452.606 13.2844 449.191 13.2844Z' fill='currentColor'
 
-    svg class='hidden tablet:inline icon-logo-standard-menu-item fill-white text-blue-l-2' aria-hidden='true'
-      use xlink:href='#logo-wnyc-standard'
+  - for (let i in this.navigation.items)
+    /! { View navigation link item }
+    a class='o-navigation__item ${this.navigation.items[i].class}' href='${this.navigation.items[i].url}'
+      = this.navigation.items[i].label
 
-    svg class='tablet:hidden icon-logo-stacked-menu-item fill-white text-blue-l-2' aria-hidden='true'
-      use xlink:href='#logo-wnyc-stacked'
+  - if this.navigation.search
+    /! { Search site feature item }
+    button class='o-navigation__item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
+      svg class='o-navigation__menu-icon icon-ui'
+        use href='#feather-search'
 
-  /! { @class  Hide menu items for mobile using utilities }
-  a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/programs/index' Programs
+      span class='o-navigation__menu-label' Search
 
-  a class='hidden desktop:inline-flex' href='#' Opportunities
+  - if this.navigation.auth
+    /! { NYC.ID or NYC account items }
+    - if this.navigation.login
+      /! { NYC account log in item }
+      a href='#' class='o-navigation__item'
+        svg aria-hidden='true' class='o-navigation__menu-icon icon-ui'
+          use href='#feather-log-in'
 
-  a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/newsletter' Newsletter
+        span Log In
 
-  / a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/events' Events
+    - if this.navigation.profile
+      /! { NYC account profile item }
+      a href='#' class='o-navigation__item'
+        svg aria-hidden='true' class='o-navigation__menu-icon icon-ui'
+          use href='#feather-user'
 
-  / a class='hidden desktop:inline-flex' href='${this.baseUrl}/demos/trainings' Trainings
+        span Profile
 
-  /! { @class  The nav supports button elements using "btn-link" }
-  /! button class='o-navigation__menu-item btn-link' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
-  /!   svg class='o-navigation__menu-icon icon-wnyc-ui'
-  /!     use xlink:href='#feather-search'
+    - if this.navigation.logout
+      /! { NYC account log out item }
+      a href='#' class='o-navigation__item'
+        svg aria-hidden='true' class='o-navigation__menu-icon icon-ui'
+          use href='#feather-log-out'
 
-  /!   span class='o-navigation__menu-label' Search
+        span Log Out
 
-  button class='o-navigation__menu-item btn-link desktop:m-0' data-js='dropdown' data-dropdown='open' data-dropdown-lock='true' aria-controls='aria-c-text-controller' aria-expanded='false'
-    svg class='o-navigation__menu-icon icon-wnyc-ui'
-      use xlink:href='#icon-wnyc-translate'
+  - if this.navigation.theme
+    /! { Theme toggling site feature item }
+    button class='o-navigation__item' data-js='themes'
+      svg class='o-navigation__menu-icon icon-ui'
+        use data-js-themes='icon' href='#feather-moon'
 
-    span class='o-navigation__menu-label' Translate
+      span class='sr-only' Toggle&nbsp;
 
-  / button class='o-navigation__menu-item btn-link tablet:hidden' data-js='dropdown' aria-controls='aria-c-filter' aria-expanded='false'
-  /   svg class='o-navigation__menu-icon icon-wnyc-ui'
-  /     use xlink:href='#feather-sliders'
+      span class='o-navigation__menu-label' data-js-themes='label' Theme
 
-  /   span class='o-navigation__menu-label' Filter
+  - if this.navigation.translate
+    /! { Language translation site feature item }
+    / button class='o-navigation__menu-item desktop:m-0' data-js='dropdown' data-dropdown='open' data-dropdown-lock='true' aria-controls='aria-c-text-controller' aria-expanded='false'
+    /   svg class='o-navigation__menu-icon icon-ui'
+    /     use href='#icon-nyco-translate'
 
-  button class='o-navigation__menu-item btn-link desktop:hidden' data-js='mobile-menu' data-js-mobile-menu='open' aria-controls='aria-c-mobile-menu' aria-expanded='false'
-    svg class='o-navigation__menu-icon icon-wnyc-ui'
-      use xlink:href='#feather-menu'
+    /   span class='o-navigation__menu-label' Languages
 
-    span class='o-navigation__menu-label' Menu
+    label class='o-navigation__menu-item desktop:m-0' for='js-custom-language-selector'
+      svg class='o-navigation__menu-icon icon-ui'
+        use href='#icon-nyco-translate'
+
+      div class='o-navigation__menu-label'
+        select id='js-custom-language-selector'
+          option disabled='true' selected='true' value='restore' Languages
+          option value='es' Español
+          option value='ru' Русский
+          option value='ko' 한국어
+          option value='ar' العربية
+          option value='ht' Kreyol
+          option value='zh-CN' 繁體中文
+          option value='fr' Français
+          option value='pl' polski
+          option value='ur' اردو
+          option value='bn' বাংলা
+
+  - if this.navigation.menu
+    /! { Menu site feature item }
+    /! { @data-js        The value "menu" is the selector matching value for the click event }
+    /! { @data-js-menu   The value "open" designates this element as the opening trigger }
+    /! { @aria-controls  Targets the menu region by ID }
+    /! { @aria-expanded  Indicates to screen readers if the menu target region is expanded or not }
+    button class='o-navigation__menu-item desktop:hidden m-0' data-js='menu' data-js-menu='open' aria-controls='aria-c-menu' aria-expanded='false'
+      svg class='o-navigation__menu-icon icon-ui'
+        use href='#feather-menu'
+
+      span class='o-navigation__menu-label' Menu
+
+    - if this.navigation.menu.include
+      - menu = this.navigation.menu
+      == this.include('/../node_modules/@nycopportunity/pattern-menu/src/menu.slm');

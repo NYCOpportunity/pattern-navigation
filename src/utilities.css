@@ -1,0 +1,17 @@
+body, .o-navigation-spacing {
+  padding-bottom: var(--o-navigation-height);
+}
+
+.o-navigation-spacing-bottom {
+  bottom: var(--o-navigation-height);
+}
+
+@media screen and (min-width: 768px) {
+  body, .o-navigation-spacing {
+    padding-bottom: 0;
+  }
+
+  .o-navigation-spacing-bottom {
+    bottom: 0;
+  }
+}
