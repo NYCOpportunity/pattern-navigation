@@ -39,7 +39,7 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
     /! { Search site feature item }
     button class='o-navigation__item' data-js='search' aria-controls='aria-c-search' aria-expanded='false'
       svg class='o-navigation__menu-icon icon-ui'
-        use href='#feather-search'
+        use href='#lucide-search'
 
       span class='o-navigation__menu-label' Search
 
@@ -49,7 +49,7 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
       /! { NYC account log in item }
       a href='#' class='o-navigation__item'
         svg aria-hidden='true' class='o-navigation__menu-icon icon-ui'
-          use href='#feather-log-in'
+          use href='#lucide-log-in'
 
         span Log In
 
@@ -57,7 +57,7 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
       /! { NYC account profile item }
       a href='#' class='o-navigation__item'
         svg aria-hidden='true' class='o-navigation__menu-icon icon-ui'
-          use href='#feather-user'
+          use href='#lucide-user'
 
         span Profile
 
@@ -65,7 +65,7 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
       /! { NYC account log out item }
       a href='#' class='o-navigation__item'
         svg aria-hidden='true' class='o-navigation__menu-icon icon-ui'
-          use href='#feather-log-out'
+          use href='#lucide-log-out'
 
         span Log Out
 
@@ -73,7 +73,7 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
     /! { Theme toggling site feature item }
     button class='o-navigation__item' data-js='themes'
       svg class='o-navigation__menu-icon icon-ui'
-        use data-js-themes='icon' href='#feather-moon'
+        use data-js-themes='icon' href='#lucide-moon'
 
       span class='sr-only' Toggle&nbsp;
 
@@ -89,7 +89,7 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
 
     label class='o-navigation__menu-item desktop:m-0' for='js-custom-language-selector'
       svg class='o-navigation__menu-icon icon-ui'
-        use href='#icon-nyco-translate'
+        use href='#lucide-languages'
 
       div class='o-navigation__menu-label'
         select id='js-custom-language-selector'
@@ -113,7 +113,7 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
     /! { @aria-expanded  Indicates to screen readers if the menu target region is expanded or not }
     button class='o-navigation__menu-item desktop:hidden m-0' data-js='menu' data-js-menu='open' aria-controls='aria-c-menu' aria-expanded='false'
       svg class='o-navigation__menu-icon icon-ui'
-        use href='#feather-menu'
+        use href='#lucide-menu'
 
       span class='o-navigation__menu-label' Menu
 
