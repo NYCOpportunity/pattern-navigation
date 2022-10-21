@@ -3,7 +3,7 @@
   --o-navigation-font-size: inherit;
   --o-navigation-line-height: 1rem;
   --o-navigation-justification: flex-end;
-  --o-navigation-height: calc(--o-navigation-grid-base * 10);
+  --o-navigation-height: calc(var(--o-navigation-grid-base) * 10);
 
   --o-navigation-logo-min-width: 128px;
   --o-navigation-item-margin: 1rem;
