@@ -89,7 +89,7 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
 
     label class='o-navigation__menu-item desktop:m-0' for='js-custom-language-selector'
       svg class='o-navigation__menu-icon icon-ui'
-        use href='#lucide-languages'
+        use href='#nyco-languages'
 
       div class='o-navigation__menu-label'
         select id='js-custom-language-selector'
