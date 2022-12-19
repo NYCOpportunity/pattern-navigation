@@ -1,4 +1,4 @@
-The Navigation Pattern is a responsive `nav` element that contains the main links for accessing different views and button elements for site features (such as language translation). It uses responsive styling to appear as a three-button menu for small viewports. Possible button options include a homepage link (using an SVG logo), a translation button, or a mobile menu toggle. The menu is fixed to the bottom of the screen by default to assist with thumb reach.
+The **Navigation Pattern** is a responsive `nav` element that contains the main links for accessing different views and button elements for site features (such as language translation). It uses responsive styling to appear as a three-button menu for small viewports. Possible button options include a homepage link (using an SVG logo), a translation button, or a mobile menu toggle. The menu is fixed to the bottom of the screen by default to assist with thumb reach.
 
 ---
 
@@ -8,7 +8,7 @@ On extra large devices (desktop), the Navigation is statically positioned at the
 
 ---
 
-We recommended three to four items: the logo (home link), the language, search, and the menu buttons. You should display additional navigation items by clicking the menu button using the [Menu Pattern](/menu).
+It is recommended to use three to four items: the logo (home link), the language, search, and the menu buttons. You should display additional navigation items by clicking the menu button using the [Menu Pattern](menu).
 
 ---
 
