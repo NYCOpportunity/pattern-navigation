@@ -81,29 +81,11 @@ nav aria-label='Primary Navigation' class='o-navigation ${this.navigation.class}
 
   - if this.navigation.translate
     /! { Language translation site feature item }
-    / button class='o-navigation__menu-item desktop:m-0' data-js='dropdown' data-dropdown='open' data-dropdown-lock='true' aria-controls='aria-c-text-controller' aria-expanded='false'
-    /   svg class='o-navigation__menu-icon icon-ui'
-    /     use href='#icon-nyco-translate'
-
-    /   span class='o-navigation__menu-label' Languages
-
-    label class='o-navigation__menu-item desktop:m-0' for='js-custom-language-selector'
+    button class='o-navigation__menu-item desktop:m-0' data-js='dialog' data-dialog='open' data-dialog-lock='true' aria-controls='aria-c-languages-dropdown' aria-expanded='false'
       svg class='o-navigation__menu-icon icon-ui'
         use href='#nyco-languages'
 
-      div class='o-navigation__menu-label'
-        select id='js-custom-language-selector'
-          option disabled='true' selected='true' value='restore' Languages
-          option value='es' Español
-          option value='ru' Русский
-          option value='ko' 한국어
-          option value='ar' العربية
-          option value='ht' Kreyol
-          option value='zh-CN' 繁體中文
-          option value='fr' Français
-          option value='pl' polski
-          option value='ur' اردو
-          option value='bn' বাংলা
+      span class='o-navigation__menu-label' Languages
 
   - if this.navigation.menu
     /! { Menu site feature item }
